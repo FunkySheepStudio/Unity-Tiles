@@ -1,0 +1,27 @@
+{
+  "name": "net.funkysheep.unity.tiles",
+  "displayName": "FunkySheep Unity Tiles Library",
+  "version": "0.1.0",
+  "unity": "2020.3",
+  "description": "FunkySheep framework Tiles Library",
+  "keywords": [
+    "Tiles",
+    "Unity",
+    "WebGl",
+    "AR",
+    "Android",
+    "IOS"
+  ],
+  "category": "Tiles",
+  "changelogUrl": "https://github.com/FunkySheepStudio/Unity-Tiles/blob/main/CHANGELOG.md",
+  "dependencies": {},
+  "scopedRegistries": [
+    {
+      "name": "npmjs",
+      "url": "https://registry.npmjs.org",
+      "scopes": [
+        "net.funkysheep"
+      ]
+    }
+  ]
+}
