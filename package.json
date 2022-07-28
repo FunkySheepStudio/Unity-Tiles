@@ -1,7 +1,7 @@
 {
   "name": "net.funkysheep.unity.tiles",
   "displayName": "FunkySheep Unity Tiles Library",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "unity": "2020.3",
   "description": "FunkySheep framework Tiles Library",
   "keywords": [

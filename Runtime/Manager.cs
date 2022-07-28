@@ -50,8 +50,7 @@ namespace FunkySheep.Tiles
         /// <returns></returns>
         public Vector2 RelativePosition(Vector2 position)
         {
-            Vector2 relativePosition = position - tileSize.value * initialOffset.value;
-            return relativePosition;
+            return Utils.RelativePosition(position, tileSize.value, initialOffset.value);
         }
 
         /// <summary>
@@ -61,13 +60,7 @@ namespace FunkySheep.Tiles
         /// <returns></returns>
         public Vector2Int TilePosition(Vector2 position)
         {
-            Vector2 relativePosition = RelativePosition(position);
-            Vector2Int tilePosition = new Vector2Int(
-              Mathf.FloorToInt(relativePosition.x / tileSize.value),
-              Mathf.FloorToInt(relativePosition.y / tileSize.value)
-            );
-
-            return tilePosition;
+            return Utils.TilePosition(position, tileSize.value, initialOffset.value);
         }
 
         /// <summary>
@@ -77,17 +70,7 @@ namespace FunkySheep.Tiles
         /// <returns></returns>
         public Vector2 InsideTilePosition(Vector2 position)
         {
-            Vector2 relativePosition = RelativePosition(position);
-            Vector2Int tilePosition = TilePosition(position);
-            Vector2 insideTilePosition = relativePosition -
-            new Vector2(
-              tilePosition.x * tileSize.value,
-              tilePosition.y * tileSize.value
-            );
-
-            insideTilePosition /= tileSize.value;
-
-            return insideTilePosition;
+            return Utils.InsideTilePosition(position, tileSize.value, initialOffset.value);
         }
 
         /// <summary>
@@ -97,28 +80,7 @@ namespace FunkySheep.Tiles
         /// <returns></returns>
         public Vector2Int InsideTileQuarterPosition(Vector2 position)
         {
-            Vector2 insideTilePosition = InsideTilePosition(position);
-            Vector2Int insideTileQuarterPosition = Vector2Int.zero;
-
-            if (insideTilePosition.x >= 0.5f)
-            {
-                insideTileQuarterPosition.x = 1;
-            }
-            else
-            {
-                insideTileQuarterPosition.x = -1;
-            }
-
-            if (insideTilePosition.y >= 0.5f)
-            {
-                insideTileQuarterPosition.y = 1;
-            }
-            else
-            {
-                insideTileQuarterPosition.y = -1;
-            }
-
-            return insideTileQuarterPosition;
+            return Utils.InsideTileQuarterPosition(position, tileSize.value, initialOffset.value);
         }
 
         /// <summary>
@@ -127,8 +89,7 @@ namespace FunkySheep.Tiles
         /// <returns></returns>
         public Vector2 WorldOffset()
         {
-            Vector2 worldOffset = initialOffset.value * tileSize.value;
-            return worldOffset;
+            return Utils.WorldOffset(tileSize.value, initialOffset.value);
         }
     }
 }
